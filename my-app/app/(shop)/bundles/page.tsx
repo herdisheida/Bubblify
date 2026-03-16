@@ -32,6 +32,9 @@ export default async function BundlesPage({}) {
                   bubble ? <li key={bubble.id}>{bubble.name}</li> : null
                 )}
               </ul>
+
+            {/* TODO add to cart functionality */}
+              <button>Add to cart</button>
             </div>
           )
         })}

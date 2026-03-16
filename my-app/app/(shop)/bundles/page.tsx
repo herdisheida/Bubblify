@@ -34,7 +34,7 @@ export default async function BundlesPage({}) {
               </ul>
 
             {/* TODO add to cart functionality */}
-              <button>Add to cart</button>
+              <button>Add Bundle to Cart</button>
             </div>
           )
         })}

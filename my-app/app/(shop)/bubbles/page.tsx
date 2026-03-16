@@ -1,6 +1,6 @@
 // List of all bubbles - app/(shop)/bubbles/page.tsx
 
-import { getBubbles } from '@/lib/api';
+import { getBubbles } from '@/lib/api/bubbles';
 import { Bubble } from '@/types/bubbles';
 import BubbleCard from '@/components/BubbleCard';
 

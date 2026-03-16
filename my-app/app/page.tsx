@@ -4,5 +4,9 @@ import "../styles/variables.css";
 
 // available bubble products
 export default function HomePage() {
-  return <div> HOME page</div>;
+  return (
+  <div className="p-10">
+    <h1 className="text-3xl mb-6">HOME page</h1>
+  </div>
+);
 }

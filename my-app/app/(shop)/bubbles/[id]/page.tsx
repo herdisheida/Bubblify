@@ -16,8 +16,8 @@ export default async function BubbleDetails({ params }: PageProps) {
   const bubble: Bubble = await getBubble(id)
 
   return (
-    <div>
-      <h1>{bubble.name}</h1>
+    <div className="p-10">
+      <h1 className="text-3xl mb-6">{bubble.name}</h1>
       <Image
         src={bubble.image}
         alt={bubble.name}

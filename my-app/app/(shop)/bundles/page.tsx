@@ -11,9 +11,8 @@ export default async function BundlesPage({}) {
   const bubbles: Bubble[] = await getBubbles();
 
   return (
-    <div>
-
-      <h1>Bundles</h1>
+    <div className="p-10">
+      <h1 className="text-3xl mb-6">Bundles</h1>
       {/* List of bundles */}
       <div>
         {bundles.map((bundle) => {

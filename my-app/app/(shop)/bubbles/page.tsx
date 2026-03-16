@@ -8,8 +8,8 @@ export default async function BubblesPage() {
   const bubbles: Bubble[] = await getBubbles();
 
   return (
-    <div>
-      <h1>Bubble Products</h1>
+    <div className="p-10">
+      <h1 className="text-3xl mb-6">Bubble Products</h1>
       {/* grid: 3 columns */}
       <div>
         {bubbles.map((bubble: Bubble) => (

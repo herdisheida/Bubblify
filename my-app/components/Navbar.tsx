@@ -1,25 +1,11 @@
 "use client"
 
 import Link from "next/link";
-import Image from "next/image";
 import "@/styles/global.css"
 
 
 export default function Navbar() {
   return (
-        // <nav>
-        // <div>
-        //     {/* TODO find logo */}
-        //     <Image src="/logo.png" alt="Logo" width={100} height={50} />
-        // </div>
-
-        // <div>
-        //     <Link href="/bubbles">Products</Link>
-        //     <Link href="/bundles">Bundles</Link>
-        //     <Link href="/about">About us</Link>
-        //     <Link href="/cart">Cart</Link>
-        // </div>
-        // </nav>
     <nav className="bg-neutral-primary fixed w-full z-20 top-0 start-0 border-b border-default">
     <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <p className="flex items-center space-x-3 rtl:space-x-reverse">

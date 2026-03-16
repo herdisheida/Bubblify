@@ -3,6 +3,6 @@ import "../styles/globals.css";
 import "../styles/variables.css";
 
 // available bubble products
-export default function Home() {
+export default function HomePage() {
   return <div> HOME page</div>;
 }

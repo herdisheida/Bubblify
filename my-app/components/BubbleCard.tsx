@@ -10,8 +10,8 @@ export default function BubbleCard({ bubble, key }: { bubble: Bubble, key: numbe
                 <Image 
                 src={bubble.image} 
                 alt={bubble.name} 
-                fill 
-                
+                width={150}
+                height={150}
                 />
             </div>
             <h2>{bubble.name}</h2>

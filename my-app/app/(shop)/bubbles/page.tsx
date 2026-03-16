@@ -9,7 +9,7 @@ export default async function BubblesPage() {
 
   return (
     <div>
-      <h1>Our Bubbles</h1>
+      <h1>Bubble Products</h1>
       {/* grid: 3 columns */}
       <div>
         {bubbles.map((bubble: Bubble) => (

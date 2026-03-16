@@ -13,7 +13,7 @@ export default async function BundlesPage({}) {
   return (
     <div>
 
-      <h1>Bundle Page</h1>
+      <h1>Bundles</h1>
       {/* List of bundles */}
       <div>
         {bundles.map((bundle) => {

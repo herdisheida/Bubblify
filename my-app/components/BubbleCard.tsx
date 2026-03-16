@@ -2,10 +2,10 @@ import { Bubble } from '@/types/bubbles';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function BubbleCard({ bubble, key }: { bubble: Bubble, key: number }) {
+export default function BubbleCard({ bubble }: { bubble: Bubble }) {
     return (
         <div>
-            <Link href={`/bubbles/${bubble.id}`} key={key}>
+            <Link href={`/bubbles/${bubble.id}`} key={bubble.id}>
             <div>
                 <Image 
                 src={bubble.image} 

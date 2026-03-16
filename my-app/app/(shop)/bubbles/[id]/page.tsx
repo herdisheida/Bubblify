@@ -1,3 +1,5 @@
-export default function BubblePage({}) {
-  return <div>Bubble page</div>;
+// bubble details - http://localhost:3000/bubbles/[id]
+
+export default function BubbleDetails({}) {
+  return <div>Bubble details page</div>;
 }

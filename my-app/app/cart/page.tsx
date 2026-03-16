@@ -42,12 +42,11 @@ export default function CartPage() {
 
       <h2 className="text-xl mt-6">Total: ${total}</h2>
 
-      <button
-        className="mt-6 bg-green-500 text-white px-6 py-3 rounded"
-        onClick={() => (window.location.href = "/checkout/delivery")}
-      >
-        Proceed to Checkout
-      </button>
+      {cart.length > 0 && (
+        <button className="mt-6 bg-green-500 text-white px-6 py-3 rounded"
+          onClick={() => (window.location.href = "/checkout/delivery")}> Proceed to Checkout
+        </button>
+      )}
     </div>
   );
 }

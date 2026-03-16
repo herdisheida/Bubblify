@@ -20,10 +20,6 @@ GET - http://localhost:3500/api/bubbles
     ]
  */
 
-export interface Bubbles {
-    bubbles: Bubble[];
-}
-
 
 /* A single bubble product object
 GET - http://localhost:3500/api/bubbles/id

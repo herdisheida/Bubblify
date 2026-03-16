@@ -23,10 +23,6 @@ GET - http://localhost:3500/api/bundles
     ]
  */
 
-export interface Bundles {
-    bundles: Bundle[];
-}
-
 
 /* A single bundle object
 GET - http://localhost:3500/api/bundles/id

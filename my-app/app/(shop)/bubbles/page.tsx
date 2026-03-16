@@ -13,7 +13,7 @@ export default async function BubblesPage() {
       <h1 className="">Our Bubbles</h1>
       {/* grid: 3 columns */}
       <div className="">
-        {bubbles.map((bubble: Bubble) => (
+        {bubbles.map((bubble: any) => (
           <Link href={`/bubbles/${bubble.id}`} key={bubble.id} className="">
             <div className="">
               <Image 

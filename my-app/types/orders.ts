@@ -1,7 +1,3 @@
-export interface Orders {
-    orders: Order[];
-}
-
 export interface Order {
     id:         number;
 

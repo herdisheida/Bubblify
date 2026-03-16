@@ -1,11 +1,14 @@
 // Bundle lis - http://localhost:3000/bundles
 
 import { getBundles } from "@/lib/api/bundles";
+import { getBubbles } from "@/lib/api/bubbles";
 import { Bundle } from "@/types/bundles";
-import BundleCard from '@/components/BundleCard';
+import { Bubble } from "@/types/bubbles";
 
-export default function BundlesPage({}) {
-  const bundles: Bundle[] = getBundles();
+
+export default async function BundlesPage({}) {
+  const bundles: Bundle[] = await getBundles();
+  const bubbles: Bubble[] = await getBubbles();
 
   return (
     <div>
@@ -13,9 +16,25 @@ export default function BundlesPage({}) {
       <h1>Bundle Page</h1>
       {/* List of bundles */}
       <div>
-        {bundles.map((bundle) => (
-          <BundleCard key={bundle.id} bundle={bundle} />
-        ))}
+        {bundles.map((bundle) => {
+          
+          // bubbles in the bundle
+          const bubbleMap = Object.fromEntries( bubbles.map((b) => [b.id, b]) );
+          const bundleBubbles = bundle.items.map((id) => bubbleMap[id])
+
+          return (
+            <div key={bundle.id}>
+              <h2>{bundle.name}</h2>
+
+              <ul>
+                {/* bubble names in the bundle */}
+                {bundleBubbles.map((bubble) =>
+                  bubble ? <li key={bubble.id}>{bubble.name}</li> : null
+                )}
+              </ul>
+            </div>
+          )
+        })}
       </div>
     </div>
   );

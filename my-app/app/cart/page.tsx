@@ -1,4 +1,4 @@
-// card management - app/(checkout)/cart/page.tsx
+// cart management - app/(checkout)/cart/page.tsx
 
 "use client";
 

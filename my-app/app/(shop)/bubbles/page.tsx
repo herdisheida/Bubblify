@@ -2,22 +2,18 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-
-async function getBubbles() {
-  const res = await fetch('http://localhost:3500/api/bubbles', { cache: 'no-store' });
-  if (!res.ok) throw new Error('Failed to fetch bubbles');
-  return res.json();
-}
+import { getBubbles } from '@/lib/api';
+import { Bubble } from '@/types/bubbles';
 
 export default async function BubblesPage() {
-  const bubbles = await getBubbles();
+  const bubbles: Bubble[] = await getBubbles();
 
   return (
     <div className="">
       <h1 className="">Our Bubbles</h1>
       {/* grid: 3 columns */}
       <div className="">
-        {bubbles.map((bubble: any) => (
+        {bubbles.map((bubble: Bubble) => (
           <Link href={`/bubbles/${bubble.id}`} key={bubble.id} className="">
             <div className="">
               <Image 

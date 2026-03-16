@@ -23,22 +23,8 @@ GET - http://localhost:3500/api/bundles
     ]
  */
 
-
-/* A single bundle object
-GET - http://localhost:3500/api/bundles/id
-
-    {
-    "id": 1,
-    "name": "Dark Christmas!",
-    "items": [
-        5,
-        6
-    ]
-    }
- */
-
 export interface Bundle {
     id:    number;
     name:  string;
-    items: number[];
+    items: number[]; // bubble IDs
 }

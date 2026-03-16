@@ -6,29 +6,48 @@ import { useCart } from "@/context/CartContext"
 export default function CartPage() {
   const { cart, increaseQuantity, decreaseQuantity, removeFromCart } = useCart()
 
-  return (
-    <div>
-      <h1>Your Cart</h1>
-      {/* List items, quantities, and total price */}
-      {cart.map((item) => (
-        <div key={item.bubble.id}>
-          <h2>{item.bubble.name}</h2>
-          <p>Price: ${item.bubble.price}</p>
-          <p>Quantity: {item.quantity}</p>
+  const total = cart.reduce(
+    (sum, item) => sum + item.bubble.price * item.quantity,
+    0
+  )
 
-          {/* remove or decrease */}
-          { cart.length > 0 ? (
-            <button onClick={() => removeFromCart(item.bubble.id)}>Remove</button>
-          ) : <button onClick={() => decreaseQuantity(item.bubble.id)}>-</button> }
-          {/* increase */}
-          <button onClick={() => increaseQuantity(item.bubble.id)}>+</button>
+  return (
+    <div className="p-10">
+      <h1 className="text-3xl mb-6">Your Cart</h1>
+
+      {cart.length === 0 && <p>Your cart is empty.</p>}
+
+      {/* list cart items*/}
+      {cart.map((item) => (
+        <div key={item.bubble.id} className="flex justify-between border-b py-4">
+          <div>
+            <h2>{item.bubble.name}</h2>
+            <p>${item.bubble.price}</p>
+          </div>
+
+          {/* quantity controls */}
+          <div className="flex gap-3 items-center">
+            {cart.length > 0 ? (
+              <button onClick={() => decreaseQuantity(item.bubble.id)}> - </button>
+            ) : (
+              <button onClick={() => removeFromCart(item.bubble.id)}> Remove </button>
+            )
+            }
+            <span>{item.quantity}</span>
+            <button onClick={() => increaseQuantity(item.bubble.id)}> + </button>
+
+          </div>
         </div>
       ))}
 
-      {/* proceed to checkout button functionality */}
-      {cart.length > 0 && (
-        <button>Proceed to checkout</button>
-      )}
+      <h2 className="text-xl mt-6">Total: ${total}</h2>
+
+      <button
+        className="mt-6 bg-green-500 text-white px-6 py-3 rounded"
+        onClick={() => (window.location.href = "/checkout/delivery")}
+      >
+        Proceed to Checkout
+      </button>
     </div>
   );
 }

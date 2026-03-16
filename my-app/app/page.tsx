@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "../styles/globals.css";
+import "../styles/global.css";
 import "../styles/variables.css";
 
 // available bubble products

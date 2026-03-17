@@ -22,7 +22,7 @@ export default function CartPage() {
     <div className="p-10">
       <h1 className="text-3xl mb-6">Your Cart</h1>
 
-      {cart.length === 0 && <p>Your cart is empty.</p>}
+      {cart.length === 0 && <p className="py-4">Your cart is empty.</p>}
 
       {/* list cart items*/}
       {cart.map((item) => (

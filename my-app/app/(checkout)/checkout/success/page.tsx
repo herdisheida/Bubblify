@@ -1,6 +1,8 @@
+'use client'
+
+import { useEffect } from "react"
 import { useCart } from "@/context/CartContext"
 import { useCheckout } from "@/context/CheckoutContext"
-import { useEffect } from "react"
 
 export default function SuccessPage() {
   const { reset } = useCheckout()

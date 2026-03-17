@@ -8,13 +8,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <CheckoutProvider>
-          <Navbar />
-          {children}
-        </CheckoutProvider>
-      </body>
-    </html>
+    <CheckoutProvider>
+      {children}
+    </CheckoutProvider>
   )
 }

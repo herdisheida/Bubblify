@@ -8,7 +8,7 @@ export async function submitOrder(data: Order, cart: CartItem[]) {
     if (!data.telephone) { throw new Error("Telephone number is required"); }
   
     // POST req
-    const res = await fetch(`http://localhost:3500/orders${data.telephone}`, {
+    const res = await fetch(`http://localhost:3500/api/orders/${data.telephone}`, {
       method: "POST",
       headers: { "Content-Type": "application/json", },
       body: JSON.stringify({

@@ -47,7 +47,7 @@ export default function ReviewPage() {
         </div>
       </div>
 
-      <button onClick={handleConfirm} className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded mt-4 transition-colors">
+      <button onClick={handleConfirm} className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded mt-4 transition-colors cursor-pointer">
         confirm
       </button>
     </div>

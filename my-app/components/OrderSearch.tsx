@@ -22,7 +22,7 @@ export default function OrderSearch() {
         className="border p-2 mr-2"
       />
 
-      <button className="bg-purple-500 hover:bg-purple-700 text-white px-6 py-3 rounded mt-4 transition-colors cursor-pointer">
+      <button className="bg-purple-500 hover:bg-purple-700 text-white px-6 py-3 rounded-xl mt-4 transition-colors cursor-pointer">
         search
       </button>
     </form>

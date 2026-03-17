@@ -14,7 +14,7 @@ const CheckoutContext = createContext<CheckoutContextType | undefined>(undefined
 
 export function CheckoutProvider({ children }: { children: React.ReactNode }) {
   const [data, setData] = useState<Order>({
-    method: "delivery",
+    method: "delivery", // default delivery
     name: "",
     address: "",
     city: "",

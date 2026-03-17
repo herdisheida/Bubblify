@@ -39,20 +39,24 @@ export default async function OrdersByTelephone({ params }: PageProps) {
         const total = order.items.reduce((sum, item) => sum + item.bubble.price * item.quantity, 0)
 
         return (
-          <div key={index} className="border p-4 mb-6 rounded-xl">
-            <h2>{order.customer.name}</h2>
+          <div key={index} className="border p-4 mb-6 rounded-xl       flex flex-col md:flex-row justify-between items-start gap-4 shadow-sm">
+            <div>
+              <h2>{order.customer.name}</h2>
 
-            <ul className="list-disc pl-5 my-2">
-              {/* order items */}
-              {order.items.map((item) => (
-                <li key={item.bubble.id}>
-                  {item.bubble.name} x {item.quantity} (${item.bubble.price})
-                </li>
-              ))}
-            </ul>
-            <p className="mt-2 font-bold">Total: ${total}</p>
+              <ul className="list-disc pl-5 my-2">
+                {/* order items */}
+                {order.items.map((item) => (
+                  <li key={item.bubble.id}>
+                    {item.bubble.name} x {item.quantity} (${item.bubble.price})
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-2 font-bold">Total: ${total}</p>
+            </div>
 
-            <AddOrderToCartButton items={order.items} />
+            <div className="shrink-0 mt-2 md:mt-0">
+              <AddOrderToCartButton items={order.items} />
+            </div>
           </div>
         )
       })}

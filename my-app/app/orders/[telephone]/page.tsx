@@ -3,13 +3,14 @@
 import { getOrdersByTelephone } from "@/lib/api/orders"
 
 interface PageProps {
-  params: {
+  params: Promise<{
     telephone: string
-  }
+  }>
 }
 
 export default async function OrdersByTelephone({ params }: PageProps) {
-  const orders = await getOrdersByTelephone(params.telephone)
+  const { telephone } = await params
+  const orders = await getOrdersByTelephone(telephone)
 
   if (!orders || orders.length === 0) {
     return (
@@ -21,7 +22,8 @@ export default async function OrdersByTelephone({ params }: PageProps) {
 
   return (
   <div className="p-10">
-      <h1 className="text-3xl mb-6">Orders for {params.telephone}</h1>
+    {/* TODO fix */}
+      {/* <h1 className="text-3xl mb-6">Orders for {telephone}</h1> */}
 
       {orders.map((order, index) => {
         const total = order.items.reduce((sum, item) => sum + item.bubble.price * item.quantity, 0)

@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function BubbleCard({ bubble }: { bubble: Bubble }) {
     return (
-        <div>
+        <div className="border p-4 rounded-lg">
             <Link href={`/bubbles/${bubble.id}`} key={bubble.id}>
             <div>
                 <Image 
@@ -14,7 +14,7 @@ export default function BubbleCard({ bubble }: { bubble: Bubble }) {
                 height={150}
                 />
             </div>
-            <h2>{bubble.name}</h2>
+            <h2 className="text-xl font-semibold">{bubble.name}</h2>
             <p>${bubble.price}</p>
             </Link>
         </div>

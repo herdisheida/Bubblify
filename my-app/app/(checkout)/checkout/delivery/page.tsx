@@ -18,7 +18,7 @@ export default function DeliveryPage({}) {
 
   return (
     <div className="p-10">
-      <h1 className="text-3xl mb-6">Delivery Method</h1>
+      <h1 className="text-3xl pb-6">Delivery Method</h1>
 
         {/* TODO
         In the first page of checkout (/checkout/delivery) the user needs to decide if

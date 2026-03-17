@@ -19,7 +19,7 @@ export default function ReviewPage() {
 
   return (
     <div className="p-10">
-      <h1 className="text-3xl mb-6">Review Order</h1>
+      <h1 className="text-3xl pb-6">Review Order</h1>
 
       <div className="mt-6">
         <p>Name: {data.name}</p>

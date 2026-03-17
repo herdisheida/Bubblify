@@ -20,7 +20,7 @@ export default function CartPage() {
 
   return (
     <div className="p-10">
-      <h1 className="text-3xl mb-6">Your Cart</h1>
+      <h1 className="text-3xl pb-6">Your Cart</h1>
 
       {cart.length === 0 && <p className="py-4">Your cart is empty.</p>}
 

@@ -14,7 +14,7 @@ export default async function BundlesPage({}) {
 
   return (
     <div className="p-10">
-      <h1 className="text-3xl mb-6">Bundles</h1>
+      <h1 className="text-3xl pb-6">Bundles</h1>
       {/* List of bundles */}
       <div className="grid grid-cols-3 gap-6">
         {bundles.map((bundle) => (

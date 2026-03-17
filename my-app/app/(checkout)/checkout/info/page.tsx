@@ -37,7 +37,7 @@ export default function InfoPage() {
 
   return (
     <div className="p-10">
-      <h1 className="text-3xl mb-6">Your Info</h1>
+      <h1 className="text-3xl pb-6">Your Info</h1>
 
         <div className="mt-6">
             <input name="name"      placeholder="Name"      onChange={handleChange} value={form.name}      className="border p-2 mb-4 w-full" />

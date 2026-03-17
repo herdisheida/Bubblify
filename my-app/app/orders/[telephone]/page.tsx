@@ -22,7 +22,7 @@ export default async function OrdersByTelephone({ params }: PageProps) {
         <Link href="/orders"
           className="bg-purple-500 hover:bg-purple-700 text-white px-6 py-3 rounded-xl mt-4 transition-colors
                       cursor-pointer hover:scale-101 hover:shadow-md
-                      focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700">
+                      active:outline-2 active:outline-offset-2 active:outline-violet-500 active:opacity-80">
           back
         </Link>
       </div>
@@ -57,7 +57,7 @@ export default async function OrdersByTelephone({ params }: PageProps) {
         <Link href="/orders"
           className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded-xl mt-4 transition-colors
                     cursor-pointer hover:scale-101 hover:shadow-md
-                    focus:outline-2 focus:outline-offset-2 focus:outline-blue-500 active:bg-blue-700">
+                    focus:outline-2 focus:outline-offset-2 focus:outline-blue-500 active:opacity-80">
           back
         </Link>
     </div>

@@ -62,7 +62,7 @@ export default function ReviewPage() {
       
       <button onClick={handleConfirm} className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded-xl mt-4 transition-colors
                                                   cursor-pointer hover:scale-101 hover:shadow-md
-                                                  focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500 active:bg-indigo-700">
+                                                  active:outline-2 active:outline-offset-2 active:outline-indigo-500 active:opacity-80">
         confirm
       </button>
     </div>

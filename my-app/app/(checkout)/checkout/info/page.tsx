@@ -58,7 +58,7 @@ export default function InfoPage() {
                     disabled={!form.name || !form.telephone || (data.method === "delivery" && (!form.address || !form.city || !form.postalCode))}
                     className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded-xl mt-4 transition-colors
                               cursor-pointer hover:scale-101 hover:shadow-md
-                              focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500 active:bg-indigo-700
+                              active:outline-2 active:outline-offset-2 active:outline-indigo-500 active:opacity-80
                               disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none">
               submit
             </button>

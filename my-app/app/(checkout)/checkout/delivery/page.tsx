@@ -21,14 +21,14 @@ export default function DeliveryPage({}) {
       <h1 className="text-3xl pb-6">Delivery Method</h1>
       <button className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded-xl mt-4 mr-4 transition-colors
                           cursor-pointer hover:scale-101 hover:shadow-md
-                          focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500 active:bg-indigo-700"
+                          active:outline-2 active:outline-offset-2 active:outline-indigo-500 active:opacity-80"
         onClick={() => handleSelect(pickup)}>
           Store Pickup
       </button>
 
       <button className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded-xl mt-4 ml-4 transition-colors
                           cursor-pointer hover:scale-101 hover:shadow-md
-                          focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500 active:bg-indigo-700"
+                          active:outline-2 active:outline-offset-2 active:outline-indigo-500 active:opacity-80"
         onClick={() => handleSelect(delivery)}>
           Home Delivery
       </button>

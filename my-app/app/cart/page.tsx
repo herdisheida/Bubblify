@@ -53,7 +53,9 @@ export default function CartPage() {
       <h2 className="text-xl mt-6">Total: ${total}</h2>
 
       {cart.length > 0 && (
-        <button className="bg-blue-500 hover:bg-blue-700 text-white px-6 py-3 rounded-xl mt-4 transition-colors      cursor-pointer hover:scale-101 hover:shadow-md"
+        <button className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded-xl mt-4 transition-colors
+                            cursor-pointer hover:scale-101 hover:shadow-md
+                            focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700"
           onClick={handleCheckout}>
           Proceed to Checkout
         </button>

@@ -5,10 +5,12 @@ import { getOrdersByTelephone } from "@/lib/api/orders"
 import AddOrderToCartButton from "@/components/AddOrderToCartButton"
 import Link from "next/link"
 
-
+/**
+ * Interface defining the props for the OrdersByTelephone component
+ */
 interface PageProps {
   params: Promise<{
-    telephone: string
+    telephone: string // telephone number extracted from the URL parameters - used to fetch associated orders
   }>
 }
 

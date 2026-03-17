@@ -12,7 +12,7 @@ import { Bundle } from "@/types/bundles"
  * Interface defining the props for the AddBundleToCartButton component
  */
 interface Props {
-  bundle: Bundle      //  the bundle object to be added to the cart
+  bundle: Bundle      //  the bundle to be added to the cart
   bubbles: Bubble[]   // list of all bubbles - used to find corresponding bubble details based on bundle item IDs
 }
 

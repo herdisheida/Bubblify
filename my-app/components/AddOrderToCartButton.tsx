@@ -5,8 +5,12 @@ import Link from "next/link"
 import { useCart } from "@/context/CartContext"
 import { CartItem } from "@/types/orders"
 
+
+/**
+ * Interface defining the props for the AddOrderToCartButton component
+ */
 interface Props {
-  items: CartItem[]
+  items: CartItem[] // list of items in the order - each item contains bubble and quantity
 }
 
 export default function AddOrderToCartButton({ items }: Props) {

@@ -3,9 +3,12 @@ import { Bubble } from "@/types/bubbles"
 import AddBundleToCartButton from "@/components/AddBundleToCartButton"
 import Image from "next/image"
 
+/**
+ * Interface defining the props for the BundleCard component
+ */
 interface BundleCardProps {
-  bundle: Bundle
-  bubbles: Bubble[]
+  bundle: Bundle     // the bundle to be displayed in the card
+  bubbles: Bubble[]  // list of all bubbles - used to find corresponding bubble details based on bundle item IDs
 }
 
 export default function BundleCard({ bundle, bubbles }: BundleCardProps) {

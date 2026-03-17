@@ -1,6 +1,7 @@
 // order details - app/orders/[telephone]/page.tsx
 
 import { getOrdersByTelephone } from "@/lib/api/orders"
+import Link from "next/link"
 
 interface PageProps {
   params: Promise<{
@@ -16,7 +17,11 @@ export default async function OrdersByTelephone({ params }: PageProps) {
     return (
       <div className="p-10">
         <h1 className="text-3xl mb-6">Find Your Orders</h1>
-        <p>No orders found for this telephone number</p>
+        <p className="pb-6">No orders found for this telephone number</p>
+        <Link href="/orders"
+          className="bg-purple-500 hover:bg-purple-700 text-white px-6 py-3 rounded mt-4 transition-colors cursor-pointer">
+          back
+        </Link>
       </div>
     )
   }
@@ -29,10 +34,10 @@ export default async function OrdersByTelephone({ params }: PageProps) {
         const total = order.items.reduce((sum, item) => sum + item.bubble.price * item.quantity, 0)
 
         return (
-          <div key={index} className="border p-4 mb-6">
+          <div key={index} className="border p-4 mb-6 rounded">
             <h2>{order.customer.name}</h2>
 
-            <ul>
+            <ul className="list-disc pl-5 my-2">
               {/* order items */}
               {order.items.map((item) => (
                 <li key={item.bubble.id}>
@@ -44,6 +49,11 @@ export default async function OrdersByTelephone({ params }: PageProps) {
           </div>
         )
       })}
+
+        <Link href="/orders"
+          className="bg-purple-500 hover:bg-purple-700 text-white px-6 py-3 rounded mt-4 transition-colors cursor-pointer">
+          back
+        </Link>
     </div>
   )
 }

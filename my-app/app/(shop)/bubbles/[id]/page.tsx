@@ -21,8 +21,8 @@ export default async function BubbleDetails({ params }: PageProps) {
       <Image
         src={bubble.image}
         alt={bubble.name}
-        width={300}
-        height={300}
+        width={350}
+        height={350}
         priority
         className="justify-self-center"
       />

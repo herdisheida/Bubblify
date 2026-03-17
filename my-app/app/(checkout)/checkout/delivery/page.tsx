@@ -33,12 +33,12 @@ export default function DeliveryPage({}) {
         ask to input only the name and telephone
         */}
 
-        <button className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded-xl mt-4 mr-4 transition-colors cursor-pointer"
+        <button className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded-xl mt-4 mr-4 transition-colors      cursor-pointer hover:scale-101 hover:shadow-md"
           onClick={() => handleSelect(pickup)}>
             Store Pickup
         </button>
 
-        <button className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded-xl mt-4 ml-4 transition-colors cursor-pointer"
+        <button className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded-xl mt-4 ml-4 transition-colors      cursor-pointer hover:scale-101 hover:shadow-md"
           onClick={() => handleSelect(delivery)}>
             Home Delivery
         </button>

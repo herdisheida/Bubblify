@@ -20,7 +20,7 @@ export default async function OrdersByTelephone({ params }: PageProps) {
         <h1 className="text-3xl pb-6">Find Your Orders</h1>
         <p className="pb-6">There is no order associated with this telephone number: {telephone}</p>
         <Link href="/orders"
-          className="bg-purple-500 hover:bg-purple-700 text-white px-6 py-3 rounded-xl mt-4 transition-colors      cursor-pointer hover:scale-101 hover:shadow-md">
+          className="bg-violet-500 hover:bg-violet-700 text-white px-6 py-3 rounded-xl mt-4 transition-colors      cursor-pointer hover:scale-101 hover:shadow-md">
           back
         </Link>
       </div>

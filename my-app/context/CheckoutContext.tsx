@@ -1,48 +1,53 @@
 "use client"
 
-import { createContext, useContext, useEffect, useState } from "react"
-import { Bubble } from "@/types/bubbles"
-import { useCart } from "./CartContext"
-
-interface CartItem {
-  bubble: Bubble
-  quantity: number
-}
-
-interface CheckoutInfo {
-  name:       string;
-  telephone:  string;
-
-  address?:    string; // optional: if delivery
-  city?:       string; // optional: if delivery
-  postalCode?: string; // optional: if delivery
-}
+import { createContext, useContext, useState } from "react"
+import { Order, DeliveryMethod } from "@/types/orders"
 
 interface CheckoutContextType {
-  cart: CartItem[]
-  checkoutInfo: CheckoutInfo | null
-  updateCheckoutInfo: (info: CheckoutInfo) => void
-  submitOrder: () => Promise<void>
+  data: Order
+  setMethod: (method: DeliveryMethod) => void
+  setInfo: (info: Partial<Order>) => void
+  reset: () => void
 }
-
 
 const CheckoutContext = createContext<CheckoutContextType | undefined>(undefined)
 
 export function CheckoutProvider({ children }: { children: React.ReactNode }) {
-  const { cart } = useCart()
-  const [checkoutInfo, setCheckoutInfo] = useState<CheckoutInfo | null>(null)
+  const [data, setData] = useState<Order>({
+    method: "delivery",
+    name: "",
+    address: "",
+    city: "",
+    postalCode: "",
+    telephone: "",
+  })
 
-  function updateCheckoutInfo(info: CheckoutInfo) {
-    setCheckoutInfo(info)
+  function setMethod(method: DeliveryMethod) {
+    setData((prev) => ({ ...prev, method }))
   }
 
+  function setInfo(info: Partial<Order>) {
+    setData((prev) => ({ ...prev, ...info }))
+  }
+
+  function reset() {
+    setData({
+      method: "delivery",
+      name: "",
+      address: "",
+      city: "",
+      postalCode: "",
+      telephone: "",
+    })
+  }
 
   return (
-    <CheckoutContext.Provider value={{ cart, checkoutInfo: checkoutInfo || null, updateCheckoutInfo, submitOrder: async () => {}}}>
+    <CheckoutContext.Provider value={{ data, setMethod, setInfo, reset }}>
       {children}
     </CheckoutContext.Provider>
   )
 }
+
 
 export function useCheckout() {
   const context = useContext(CheckoutContext)

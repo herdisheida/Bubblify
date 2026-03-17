@@ -1,5 +1,6 @@
-import { CartProvider } from "@/context/CartContext"
+import { CheckoutProvider } from "@/context/CheckoutContext"
 import Navbar from "@/components/Navbar"
+
 
 export default function RootLayout({
   children,
@@ -9,10 +10,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <CartProvider>
+        <CheckoutProvider>
           <Navbar />
           {children}
-        </CartProvider>
+        </CheckoutProvider>
       </body>
     </html>
   )

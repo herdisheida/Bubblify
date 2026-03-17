@@ -1,10 +1,8 @@
-export interface Order {
-    id:         number;
+export interface Order { 
+    method:      DeliveryMethod;
 
-    type:    OrderType;
-
-    name:       string;
-    telephone:  string;
+    name:        string;
+    telephone:   string;
 
     address?:    string; // optional: if delivery
     city?:       string; // optional: if delivery
@@ -12,4 +10,4 @@ export interface Order {
 
 }
 
-export type OrderType = "delivery" | "pickup";
+export type DeliveryMethod = "delivery" | "pickup"

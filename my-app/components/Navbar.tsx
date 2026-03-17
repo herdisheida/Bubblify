@@ -22,7 +22,7 @@ export default function Navbar() {
                     <Link href="/bundles">Bundles</Link>
                 </li>
                 <li className="hover:text-violet-700 font-bold hover:underline">
-                    <Link href="/about">About</Link>
+                    <Link href="/about">About us</Link>
                 </li>
                 <li className="hover:text-violet-700 font-bold hover:underline">
                     <Link href="/cart">Cart</Link>

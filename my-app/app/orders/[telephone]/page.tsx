@@ -53,7 +53,7 @@ export default async function OrdersByTelephone({ params }: PageProps) {
         )
       })}
 
-        {/* TODO add old orders to cart? functionality */}
+        {/* TODO add old orders to cart? functionality -- create a new button component */}
         <Link href="/orders"
           className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded-xl mt-4 transition-colors
                     cursor-pointer hover:scale-101 hover:shadow-md

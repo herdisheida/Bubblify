@@ -19,6 +19,11 @@ export default function AddBundleToCartButton({ bundle, bubbles }: Props) {
     })
   }
 
+// When a selection is finished, he gets an option to go to the checkout. The
+// checkout should also be available in the cart
+        // TODO so when onclick --- make text or button appear ( go to checkout ?)
+
+
   return (
     <button
       onClick={handleAddBundle}

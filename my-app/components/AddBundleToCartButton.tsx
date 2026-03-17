@@ -22,7 +22,9 @@ export default function AddBundleToCartButton({ bundle, bubbles }: Props) {
   return (
     <button
       onClick={handleAddBundle}
-      className="bg-purple-500 hover:bg-purple-700 text-white px-6 py-3 rounded-xl mt-4 transition-colors      cursor-pointer hover:scale-101 hover:shadow-md">
+      className="bg-purple-500 hover:bg-purple-700 text-white px-6 py-3 rounded-xl mt-4 transition-colors
+                  cursor-pointer hover:scale-101 hover:shadow-md
+                  focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700">
         Add Bundle to Cart
     </button>
   )

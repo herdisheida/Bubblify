@@ -27,7 +27,7 @@ export default function ReviewPage() {
         <p>Telephone: {data.telephone}</p>
         <p>Method: {data.method}</p>
 
-        <h2 className="mt-4 ">Items:</h2>
+        <h2 className="mt-4">Cart:</h2>
         <div className="grid grid-cols-4 gap-6">
         {cart.map((item) => (
             <div className="border p-4 rounded-lg content-center">

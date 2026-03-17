@@ -25,7 +25,13 @@ export async function getOrders(): Promise<OrderResponse[]> {
 export async function getOrdersByTelephone(telephone: string): Promise<OrderResponse[]> {
   try {
     const res = await fetch(`${API_URL}/orders/${telephone}`, { cache: "no-store", })
-    if (!res.ok) throw new Error("Failed to fetch orders: " + res.status + " - " + res.statusText)
+
+    if (res.status === 404) {
+      console.warn(`No orders found for telephone ${telephone}`);
+      return [];
+    }
+
+    if (!res.ok) throw new Error("Failed to fetch orders. Status: " + res.status + " - " + res.statusText)
     return res.json()
   } catch (error) {
     console.error(`Error fetching orders for telephone ${telephone}:`, error);

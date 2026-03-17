@@ -2,9 +2,16 @@
 'use client'
 
 import { useCart } from "@/context/CartContext"
+import { useRouter } from "next/navigation"
+
 
 export default function CartPage() {
   const { cart, increaseQuantity, decreaseQuantity, removeFromCart } = useCart()
+  const router = useRouter()
+
+  function handleCheckout() {
+    router.push("/checkout/delivery")
+  }
 
   const total = cart.reduce(
     (sum, item) => sum + item.bubble.price * item.quantity,
@@ -47,7 +54,8 @@ export default function CartPage() {
 
       {cart.length > 0 && (
         <button className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded mt-4 transition-colors cursor-pointer"
-          onClick={() => (window.location.href = "/checkout/delivery")}> Proceed to Checkout
+          onClick={handleCheckout}>
+          Proceed to Checkout
         </button>
       )}
     </div>

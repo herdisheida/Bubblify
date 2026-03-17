@@ -1,6 +1,8 @@
 // order details - app/orders/[telephone]/page.tsx
 
 import { getOrdersByTelephone } from "@/lib/api/orders"
+
+import AddOrderToCartButton from "@/components/AddOrderToCartButton"
 import Link from "next/link"
 
 
@@ -49,11 +51,13 @@ export default async function OrdersByTelephone({ params }: PageProps) {
               ))}
             </ul>
             <p className="mt-2 font-bold">Total: ${total}</p>
+
+            <AddOrderToCartButton items={order.items} />
           </div>
         )
       })}
 
-        {/* TODO add old orders to cart? functionality -- create a new button component */}
+      {/* back to searching orders button */}
         <Link href="/orders"
           className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded-xl mt-4 transition-colors
                     cursor-pointer hover:scale-101 hover:shadow-md

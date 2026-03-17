@@ -24,11 +24,6 @@ export default function AddBundleToCartButton({ bundle, bubbles }: Props) {
     setIsAdded(true) // show the checkout button
   }
 
-// When a selection is finished, he gets an option to go to the checkout. The
-// checkout should also be available in the cart
-        // TODO so when onclick --- make text or button appear ( go to checkout ?)
-
-
   return (
     <div className="flex flex-col gap-3 mt-4">
       <button

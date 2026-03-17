@@ -17,3 +17,10 @@ export interface CartItem {
   bubble: Bubble
   quantity: number
 }
+
+
+// for fetching orders
+export interface OrderResponse {
+  customer: Order
+  items: CartItem[]
+}

@@ -4,6 +4,8 @@ import { getBundles } from "@/lib/api/bundles";
 import { getBubbles } from "@/lib/api/bubbles";
 import { Bundle } from "@/types/bundles";
 import { Bubble } from "@/types/bubbles";
+import  AddBundleToCartButton from "@/components/AddBundleToCartButton";
+
 
 
 export default async function BundlesPage({}) {
@@ -33,7 +35,7 @@ export default async function BundlesPage({}) {
               </ul>
 
             {/* TODO add to cart functionality */}
-              <button>Add Bundle to Cart</button>
+              <AddBundleToCartButton bundle={bundle} bubbles={bubbles} />
             </div>
           )
         })}

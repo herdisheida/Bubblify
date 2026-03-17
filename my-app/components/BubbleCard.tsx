@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function BubbleCard({ bubble }: { bubble: Bubble }) {
     return (
-        <div className="border p-4 rounded-lg">
+        <div className="border p-4 rounded-xl">
             <Link href={`/bubbles/${bubble.id}`} key={bubble.id}>
             <div>
                 <Image 

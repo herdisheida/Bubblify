@@ -35,7 +35,7 @@ export default function ReviewPage() {
         <h2 className="mt-4">Cart:</h2>
         <div className="grid grid-cols-4 gap-6">
         {cart.map((item) => (
-            <div key={item.bubble.id} className="border p-4 rounded-lg content-center">
+            <div key={item.bubble.id} className="border p-4 rounded-xl content-center">
                 <Image src={item.bubble.image} alt={item.bubble.name} width={150} height={150} priority />
                 <h2 className="text-xl font-semibold">{item.bubble.name}</h2>
                 <p>${item.bubble.price}</p>

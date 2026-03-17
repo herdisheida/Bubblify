@@ -1,6 +1,8 @@
 export interface Order {
     id:         number;
 
+    type:    OrderType;
+
     name:       string;
     telephone:  string;
 
@@ -9,3 +11,5 @@ export interface Order {
     postalCode?: string; // optional: if delivery
 
 }
+
+export type OrderType = "delivery" | "pickup";

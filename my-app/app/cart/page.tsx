@@ -27,15 +27,10 @@ export default function CartPage() {
 
           {/* quantity controls */}
           <div className="flex gap-3 items-center">
-            {cart.length > 0 ? (
-              <button onClick={() => decreaseQuantity(item.bubble.id)}> - </button>
-            ) : (
-              <button onClick={() => removeFromCart(item.bubble.id)}> Remove </button>
-            )
-            }
+            <button onClick={() => decreaseQuantity(item.bubble.id)}> - </button>
             <span>{item.quantity}</span>
             <button onClick={() => increaseQuantity(item.bubble.id)}> + </button>
-
+            <button onClick={() => removeFromCart(item.bubble.id)}> Remove </button>
           </div>
         </div>
       ))}

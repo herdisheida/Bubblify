@@ -17,7 +17,7 @@ export default function BundleCard({ bundle, bubbles }: BundleCardProps) {
   const bundleBubbles = bundle.items.map((id) => bubbleMap[id])
 
   return (
-    <div className="border p-4 rounded-lg">
+    <div className="border p-4 rounded-lg hover:scale-101 hover:shadow-md transition-transform">
       <h2 className="text-xl font-semibold justify-self-center pb-4 pt-2">{bundle.name}</h2>
 
       <ul className="mt-2">

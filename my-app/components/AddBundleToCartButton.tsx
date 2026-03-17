@@ -7,9 +7,13 @@ import { useCart } from "@/context/CartContext"
 import { Bubble } from "@/types/bubbles"
 import { Bundle } from "@/types/bundles"
 
+
+/**
+ * Interface defining the props for the AddBundleToCartButton component
+ */
 interface Props {
-  bundle: Bundle
-  bubbles: Bubble[]
+  bundle: Bundle      //  the bundle object to be added to the cart
+  bubbles: Bubble[]   // list of all bubbles - used to find corresponding bubble details based on bundle item IDs
 }
 
 export default function AddBundleToCartButton({ bundle, bubbles }: Props) {

@@ -34,7 +34,7 @@ export default async function OrdersByTelephone({ params }: PageProps) {
         const total = order.items.reduce((sum, item) => sum + item.bubble.price * item.quantity, 0)
 
         return (
-          <div key={index} className="border p-4 mb-6 rounded">
+          <div key={index} className="border p-4 mb-6 rounded-xl">
             <h2>{order.customer.name}</h2>
 
             <ul className="list-disc pl-5 my-2">

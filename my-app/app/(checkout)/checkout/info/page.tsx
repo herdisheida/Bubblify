@@ -53,7 +53,7 @@ export default function InfoPage() {
             <input name="telephone" placeholder="Telephone" onChange={handleChange} className="border p-2 mb-4 w-full" />
 
 {/* TODO fix - delivery not showing */}
-            {data.method === "delivery" ? (
+            {data.method === "delivery" as DeliveryMethod ? (
                 <>
                   <input name="address"    placeholder="Address"     onChange={handleChange} className="border p-2 mb-4 w-full" />
                   <input name="city"       placeholder="City"        onChange={handleChange} className="border p-2 mb-4 w-full" />
@@ -68,12 +68,6 @@ export default function InfoPage() {
             <button onClick={handleSubmit} className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded mt-4 transition-colors">
               submit
             </button>
-
-
-            {/* <button className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded mt-4 transition-colors"
-              onClick={() => (window.location.href = "/checkout/review")}>
-                submit
-            </button> */}
         </div>
     </div>
   );

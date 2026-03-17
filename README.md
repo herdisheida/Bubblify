@@ -16,7 +16,7 @@ It is a simple <xxxxx> application that uses the <xxxxx> to <xxxxx>.
 2. Open the app in your browser
 
 ```
-http://localhost:3000/Bubblify
+http://localhost:3000/bubbles
 ```
 
 ## Tech Stack
@@ -24,4 +24,4 @@ http://localhost:3000/Bubblify
 - Next.js (App Router)
 - React
 - TypeScript
-- CSS Modules and Tailwind CSS
+- Tailwind CSS

@@ -9,9 +9,9 @@ import AddToCartButton from "@/components/AddToCartButton"
  * Interface defining the props for the BubbleDetails component
  */
 interface PageProps {
-  params: {
+  params: Promise<{
     id: string; // the ID of the bubble to be displayed, extracted from the URL parameters
-  }
+  }>
 }
 
 export default async function BubbleDetails({ params }: PageProps) {

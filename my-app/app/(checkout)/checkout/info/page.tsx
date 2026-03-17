@@ -40,14 +40,14 @@ export default function InfoPage() {
       <h1 className="text-3xl pb-6">Your Info</h1>
 
         <div className="mt-6">
-            <input name="name"      placeholder="Name"      onChange={handleChange} value={form.name}      className="border p-2 mb-4 w-full" />
-            <input name="telephone" placeholder="Telephone" onChange={handleChange} value={form.telephone} className="border p-2 mb-4 w-full" />
+            <input name="name"      placeholder="Name"      onChange={handleChange} value={form.name}      className="border p-2 mb-4 w-full rounded" />
+            <input name="telephone" placeholder="Telephone" onChange={handleChange} value={form.telephone} className="border p-2 mb-4 w-full rounded" />
 
             {data.method === "delivery" ? (
                 <>
-                  <input name="address"    placeholder="Address"     onChange={handleChange} value={form.address} className="border p-2 mb-4 w-full" />
-                  <input name="city"       placeholder="City"        onChange={handleChange} value={form.city} className="border p-2 mb-4 w-full" />
-                  <input name="postalCode" placeholder="Postal Code" onChange={handleChange} value={form.postalCode} className="border p-2 mb-4 w-full" />
+                  <input name="address"    placeholder="Address"     onChange={handleChange} value={form.address}     className="border p-2 mb-4 w-full rounded" />
+                  <input name="city"       placeholder="City"        onChange={handleChange} value={form.city}        className="border p-2 mb-4 w-full rounded" />
+                  <input name="postalCode" placeholder="Postal Code" onChange={handleChange} value={form.postalCode}  className="border p-2 mb-4 w-full rounded" />
                 </>
             ) : null}
 

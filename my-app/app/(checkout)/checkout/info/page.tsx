@@ -48,15 +48,15 @@ export default function InfoPage() {
         */}
 
         <div className="mt-6">
-            <input name="name"      placeholder="Name"      onChange={handleChange} className="border p-2 mb-4 w-full" />
-            <input name="telephone" placeholder="Telephone" onChange={handleChange} className="border p-2 mb-4 w-full" />
+            <input name="name"      placeholder="Name"      onChange={handleChange} value={form.name} className="border p-2 mb-4 w-full" />
+            <input name="telephone" placeholder="Telephone" onChange={handleChange} value={form.telephone} className="border p-2 mb-4 w-full" />
 
 {/* TODO fix - delivery not showing */}
             {data.method === "delivery" ? (
                 <>
-                  <input name="address"    placeholder="Address"     onChange={handleChange} className="border p-2 mb-4 w-full" />
-                  <input name="city"       placeholder="City"        onChange={handleChange} className="border p-2 mb-4 w-full" />
-                  <input name="postalCode" placeholder="Postal Code" onChange={handleChange} className="border p-2 mb-4 w-full" />
+                  <input name="address"    placeholder="Address"     onChange={handleChange} value={form.address} className="border p-2 mb-4 w-full" />
+                  <input name="city"       placeholder="City"        onChange={handleChange} value={form.city} className="border p-2 mb-4 w-full" />
+                  <input name="postalCode" placeholder="Postal Code" onChange={handleChange} value={form.postalCode} className="border p-2 mb-4 w-full" />
                 </>
             ) : null}
 

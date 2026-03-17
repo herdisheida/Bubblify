@@ -7,7 +7,14 @@ import { Bubble } from "@/types/bubbles"
 import { useCart } from "@/context/CartContext"
 
 
-export default function AddToCartButton({ bubble }: { bubble: Bubble }) {
+/**
+ * Interface defining the props for the AddToCartButton component.
+ */
+interface AddToCartButtonProps {
+  bubble: Bubble; // single bubble to be added to the cart
+}
+
+export default function AddToCartButton({ bubble }: AddToCartButtonProps) {
   const { addToCart } = useCart()
   const [isAdded, setIsAdded] = useState(false)
 

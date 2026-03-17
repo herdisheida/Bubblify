@@ -28,6 +28,10 @@ export default function DeliveryPage({ type }: { type: OrderType }) {
                 </>
             ) : null}
 
+            {/* <button className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded mt-4 transition-colors"
+              onClick={() => (window.location.href = "/checkout/review")}>
+                submit
+            </button> */}
         </div>
     </div>
   );

@@ -9,9 +9,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Navbar />
         <CartProvider>
-          <Navbar />
-          {children}
+          <div className="max-w-4xl mx-auto my-10">
+            {children}
+          </div>
         </CartProvider>
       </body>
     </html>

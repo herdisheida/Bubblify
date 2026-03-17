@@ -28,7 +28,7 @@ export default async function OrdersByTelephone({ params }: PageProps) {
 
   return (
   <div className="p-10">
-    <h1 className="text-3xl mb-6">Orders for {telephone}</h1>
+    <h1 className="text-3xl pb-6">Orders for {telephone}</h1>
 
       {orders.map((order, index) => {
         const total = order.items.reduce((sum, item) => sum + item.bubble.price * item.quantity, 0)

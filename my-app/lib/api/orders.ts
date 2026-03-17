@@ -24,7 +24,7 @@ export async function getOrders(): Promise<OrderResponse[]> {
  */
 export async function getOrdersByTelephone(telephone: string): Promise<OrderResponse[]> {
   try {
-    const res = await fetch(`${API_URL}/orders/:${telephone}`, { cache: "no-store", })
+    const res = await fetch(`${API_URL}/orders/${telephone}`, { cache: "no-store", })
     if (!res.ok) throw new Error("Failed to fetch orders")
     return res.json()
   } catch (error) {

@@ -38,20 +38,10 @@ export default function InfoPage() {
     <div className="p-10">
       <h1 className="text-3xl mb-6">Your Info</h1>
 
-        {/*  TODO
-        4. If he decides to have it delivered, the next page (/checkout/info) will ask to
-        input the following information: name, address, city, telephone and postal
-        code
-
-        5. If he decides to arrange a store-pickup, the next page (/checkout/info) will
-        ask to input only the name and telephone
-        */}
-
         <div className="mt-6">
             <input name="name"      placeholder="Name"      onChange={handleChange} value={form.name} className="border p-2 mb-4 w-full" />
             <input name="telephone" placeholder="Telephone" onChange={handleChange} value={form.telephone} className="border p-2 mb-4 w-full" />
 
-{/* TODO fix - delivery not showing */}
             {data.method === "delivery" ? (
                 <>
                   <input name="address"    placeholder="Address"     onChange={handleChange} value={form.address} className="border p-2 mb-4 w-full" />

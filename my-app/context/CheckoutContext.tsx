@@ -2,73 +2,43 @@
 
 import { createContext, useContext, useEffect, useState } from "react"
 import { Bubble } from "@/types/bubbles"
+import { useCart } from "./CartContext"
 
 interface CartItem {
   bubble: Bubble
   quantity: number
 }
 
+interface CheckoutInfo {
+  name:       string;
+  telephone:  string;
+
+  address?:    string; // optional: if delivery
+  city?:       string; // optional: if delivery
+  postalCode?: string; // optional: if delivery
+}
+
 interface CheckoutContextType {
   cart: CartItem[]
-  
+  checkoutInfo: CheckoutInfo | null
+  updateCheckoutInfo: (info: CheckoutInfo) => void
+  submitOrder: () => Promise<void>
 }
+
 
 const CheckoutContext = createContext<CheckoutContextType | undefined>(undefined)
 
 export function CheckoutProvider({ children }: { children: React.ReactNode }) {
-  const [cart, setCart] = useState<CartItem[]>([])
+  const { cart } = useCart()
+  const [checkoutInfo, setCheckoutInfo] = useState<CheckoutInfo | null>(null)
 
-  // load cart from localStorage
-  useEffect(() => {
-    const stored = localStorage.getItem("cart")
-    if (stored) { setCart(JSON.parse(stored)) }
-  }, [])
-
-  // save cart to localStorage (when cart changes)
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart))
-  }, [cart])
-
-  // add bubble to cart: if exists, increase quantity; else add new item
-  function addToCart(bubble: Bubble) {
-    setCart((prev) => {
-      const existing = prev.find((item) => item.bubble.id === bubble.id)
-
-      if (existing) {
-        return prev.map((item) =>
-          item.bubble.id === bubble.id ? { ...item, quantity: item.quantity + 1 } : item
-        )
-      }
-      return [...prev, { bubble, quantity: 1 }]
-    })
+  function updateCheckoutInfo(info: CheckoutInfo) {
+    setCheckoutInfo(info)
   }
 
-  // remove bubble from cart (assume bubble quantity is 1)
-  function removeFromCart(id: number) {
-    setCart((prev) => prev.filter((item) => item.bubble.id !== id))
-  }
-
-  // increase quantity of bubble in cart
-  function increaseQuantity(id: number) {
-    setCart((prev) =>
-      prev.map((item) =>
-        item.bubble.id === id ? { ...item, quantity: item.quantity + 1 } : item
-      )
-    )
-  }
-
-  function decreaseQuantity(id: number) {
-    setCart((prev) =>
-      prev
-        .map((item) =>
-          item.bubble.id === id ? { ...item, quantity: item.quantity - 1 } : item
-        )
-        .filter((item) => item.quantity > 0)
-    )
-  }
 
   return (
-    <CheckoutContext.Provider value={{ cart }}>
+    <CheckoutContext.Provider value={{ cart, checkoutInfo: checkoutInfo || null, updateCheckoutInfo, submitOrder: async () => {}}}>
       {children}
     </CheckoutContext.Provider>
   )

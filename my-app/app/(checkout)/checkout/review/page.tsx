@@ -6,15 +6,28 @@ import { submitOrder } from "@/lib/api/actions"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
 
+import LoadingSpinner from "@/components/ui/LoadingSpinner"
+import { useState } from "react"
+
 
 export default function ReviewPage() {
   const { data } = useCheckout()
   const { cart } = useCart()
   const router = useRouter()
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   async function handleConfirm() {
-    await submitOrder(data, cart)
-    router.push("/checkout/success")
+    setIsSubmitting(true)
+
+    try {
+      await submitOrder(data, cart)
+      router.push("/checkout/success")
+    } catch (error) {
+      console.error("Error submitting order:", error)
+      alert("Failed to submit order. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -45,6 +58,8 @@ export default function ReviewPage() {
         </div>
       </div>
 
+      {isSubmitting ? <LoadingSpinner /> : null}
+      
       <button onClick={handleConfirm} className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded-xl mt-4 transition-colors      cursor-pointer hover:scale-101 hover:shadow-md">
         confirm
       </button>

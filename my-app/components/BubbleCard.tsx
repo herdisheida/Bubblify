@@ -12,6 +12,7 @@ export default function BubbleCard({ bubble }: { bubble: Bubble }) {
                 alt={bubble.name} 
                 width={150}
                 height={150}
+                priority
                 />
             </div>
             <h2 className="text-xl font-semibold">{bubble.name}</h2>

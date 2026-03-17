@@ -26,7 +26,7 @@ export default function BundleCard({ bundle, bubbles }: BundleCardProps) {
           bubble ? 
           (
             <div key={bubble.id} className="flex items-center gap-2">
-                <Image src={bubble.image} alt={bubble.name} width={50} height={50} />
+                <Image src={bubble.image} alt={bubble.name} width={50} height={50} priority />
                 <li key={bubble.id}>{bubble.name}</li>
             </div>
           ) : null

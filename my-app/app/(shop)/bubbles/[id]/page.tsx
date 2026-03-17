@@ -23,6 +23,7 @@ export default async function BubbleDetails({ params }: PageProps) {
         alt={bubble.name}
         width={300}
         height={300}
+        priority
       />
       <p>{bubble.description}</p>
       <p>${bubble.price}</p>

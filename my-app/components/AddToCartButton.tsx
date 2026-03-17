@@ -9,7 +9,7 @@ export default function AddToCartButton({ bubble }: { bubble: Bubble }) {
   return (
     <button
       onClick={() => addToCart(bubble)}
-      className="bg-blue-500 text-white px-6 py-3 rounded mt-4 hover:bg-blue-600 transition-colors">
+      className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded mt-4 transition-colors">
       Add to Cart
     </button>
   )

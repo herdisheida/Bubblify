@@ -61,7 +61,6 @@ export default function InfoPage() {
             ) : null}
 
 
-            
             {error && <p className="text-red-500">{error}</p>}
 
             <button onClick={handleSubmit} className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded mt-4 transition-colors">

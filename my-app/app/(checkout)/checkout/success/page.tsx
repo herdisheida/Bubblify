@@ -1,4 +1,16 @@
+import { useCart } from "@/context/CartContext"
+import { useCheckout } from "@/context/CheckoutContext"
+import { useEffect } from "react"
+
 export default function SuccessPage() {
+  const { reset } = useCheckout()
+  const { clearCart } = useCart()
+
+  useEffect(() => {
+    reset()     // reset checkout data after submission
+    clearCart() // clear cart after submission
+  }, [])
+
   return (
     <div className="p-10">
       <h1 className="text-3xl mb-6">Order Successful</h1>

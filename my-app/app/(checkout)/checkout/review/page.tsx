@@ -8,14 +8,12 @@ import Image from "next/image"
 
 
 export default function ReviewPage() {
-  const { data, reset } = useCheckout()
-  const { cart, clearCart } = useCart()
+  const { data } = useCheckout()
+  const { cart } = useCart()
   const router = useRouter()
 
   async function handleConfirm() {
     await submitOrder(data, cart)
-    reset()     // reset checkout data after submission
-    clearCart() // clear cart after submission
     router.push("/checkout/success")
   }
 

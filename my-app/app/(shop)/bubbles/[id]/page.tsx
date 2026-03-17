@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { getBubble } from "@/lib/api/bubbles"
 import { Bubble } from "@/types/bubbles"
-
+import AddToCartButton from "@/components/AddToCartButton"
 
 interface PageProps {
   params: {
@@ -27,7 +27,7 @@ export default async function BubbleDetails({ params }: PageProps) {
       <p>{bubble.description}</p>
       <p>${bubble.price}</p>
       {/* add to cart functionality */}
-      <button>Add to Cart</button>
+      <AddToCartButton bubble={bubble} />
     </div>
   );
 }

@@ -19,8 +19,7 @@ export async function submitOrder(data: Order, cart: CartItem[]) {
 
     // Check if the server rejected the POST request
     if (!res.ok) {
-      const errorText = await res.text(); // read the server's error message
-      console.error(`Server rejected order. Status: ${res.status}, Message: ${errorText}`);
+      console.error(`Server rejected order. Status: ${res.status}`);
       throw new Error("Failed to submit order");
     }
 

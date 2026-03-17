@@ -26,9 +26,9 @@ export default function CartPage() {
 
       {/* list cart items*/}
       {cart.map((item) => (
-        <div key={item.bubble.id} className="flex justify-between border-b py-4">
+        <div key={item.bubble.id} className="flex justify-between border p-4 my-4 rounded">
           <div>
-            <h2>{item.bubble.name}</h2>
+            <h2 className="font-semibold">{item.bubble.name}</h2>
             <p>${item.bubble.price}</p>
           </div>
 

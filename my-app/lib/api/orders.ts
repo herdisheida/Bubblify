@@ -8,9 +8,14 @@ const API_URL = "http://localhost:3500/api"
  * GET - http://localhost:3500/api/orders
  */
 export async function getOrders(): Promise<OrderResponse[]> {
-  const res = await fetch(`${API_URL}/orders`, { cache: 'no-store' });
-  if (!res.ok) throw new Error('Failed to fetch orders');
-  return res.json();
+  try {
+    const res = await fetch(`${API_URL}/orders`, { cache: 'no-store' });
+    if (!res.ok) throw new Error('Failed to fetch orders');
+    return res.json();
+  } catch (error) {
+    console.error("Error fetching orders:", error);
+    return [];
+  }
 }
 
 /**
@@ -18,7 +23,12 @@ export async function getOrders(): Promise<OrderResponse[]> {
  * GET - http://localhost:3500/api/orders/telephone
  */
 export async function getOrdersByTelephone(telephone: string): Promise<OrderResponse[]> {
-  const res = await fetch(`${API_URL}/orders/${telephone}`, { cache: "no-store", })
-  if (!res.ok) throw new Error("Failed to fetch orders")
-  return res.json()
+  try {
+    const res = await fetch(`${API_URL}/orders/${telephone}`, { cache: "no-store", })
+    if (!res.ok) throw new Error("Failed to fetch orders")
+    return res.json()
+  } catch (error) {
+    console.error(`Error fetching orders for telephone ${telephone}:`, error);
+    return [];
+  }
 }

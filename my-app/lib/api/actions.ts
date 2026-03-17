@@ -1,10 +1,9 @@
 "use server"
 
-import { Bubble } from "@/types/bubbles"
-import { Order } from "@/types/orders"
+import { CartItem, Order } from "@/types/orders"
 
 
-export async function submitOrder(data: Order, cart: Bubble[]) {
+export async function submitOrder(data: Order, cart: CartItem[]) {
   await fetch("http://localhost:3500/orders", {
     method: "POST",
     headers: {

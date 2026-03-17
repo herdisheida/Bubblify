@@ -2,11 +2,9 @@
 
 import { createContext, useContext, useEffect, useState } from "react"
 import { Bubble } from "@/types/bubbles"
+import { CartItem } from "@/types/orders"
 
-interface CartItem {
-  bubble: Bubble
-  quantity: number
-}
+
 
 interface CartContextType {
   cart: CartItem[]

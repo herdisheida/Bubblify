@@ -4,7 +4,6 @@ import { useCheckout } from "@/context/CheckoutContext"
 import { useCart } from "@/context/CartContext"
 import { submitOrder } from "@/lib/api/actions"
 import { useRouter } from "next/navigation"
-import BubbleCard from "@/components/BubbleCard"
 import Image from "next/image"
 
 

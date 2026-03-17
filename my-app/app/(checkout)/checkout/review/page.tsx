@@ -32,14 +32,14 @@ export default function ReviewPage() {
           </>
           )}
 
-        <h2 className="mt-4">Cart:</h2>
+        <h2 className="py-4">Cart:</h2>
         <div className="grid grid-cols-4 gap-6">
         {cart.map((item) => (
             <div key={item.bubble.id} className="border p-4 rounded-xl content-center">
-                <Image src={item.bubble.image} alt={item.bubble.name} width={150} height={150} priority />
-                <h2 className="text-xl font-semibold">{item.bubble.name}</h2>
-                <p>${item.bubble.price}</p>
-                <p>Quantity: {item.quantity}</p>
+                <Image className="justify-self-center" src={item.bubble.image} alt={item.bubble.name} width={150} height={150} priority />
+                <h2 className="text-xl font-semibold justify-self-center">{item.bubble.name}</h2>
+                <p className="justify-self-center">${item.bubble.price}</p>
+                <p className="justify-self-center">Quantity: {item.quantity}</p>
             </div>
         ))}
         </div>

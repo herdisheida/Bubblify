@@ -17,16 +17,17 @@ export default function InfoPage() {
   }
 
   function handleSubmit() {
-    if (!form.name || !form.telephone) {
-      setError("Name and telephone are required")
-      return
-    }
+    // required fields
+    if (!form.name || !form.telephone) { setError("Name and telephone are required"); return; }
+
+    // validate fields
+    const nameRegex = /^[A-Za-z\s]+$/ // only letters and spaces
+    const phoneRegex = /^[0-9]+$/     // only digits
+    if (!nameRegex.test(form.name)) { setError("Name must only contain letters"); return; }
+    if (!phoneRegex.test(form.telephone)) { setError("Telephone must only contain digits"); return; }
 
     if (data.method === "delivery") {
-      if (!form.address || !form.city || !form.postalCode) {
-        setError("All delivery fields are required")
-        return
-      }
+      if (!form.address || !form.city || !form.postalCode) { setError("All delivery fields are required"); return; }
     }
 
     setInfo(form)
@@ -39,7 +40,7 @@ export default function InfoPage() {
       <h1 className="text-3xl mb-6">Your Info</h1>
 
         <div className="mt-6">
-            <input name="name"      placeholder="Name"      onChange={handleChange} value={form.name} className="border p-2 mb-4 w-full" />
+            <input name="name"      placeholder="Name"      onChange={handleChange} value={form.name}      className="border p-2 mb-4 w-full" />
             <input name="telephone" placeholder="Telephone" onChange={handleChange} value={form.telephone} className="border p-2 mb-4 w-full" />
 
             {data.method === "delivery" ? (

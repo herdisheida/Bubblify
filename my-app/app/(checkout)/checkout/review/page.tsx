@@ -25,7 +25,13 @@ export default function ReviewPage() {
       <div className="mt-6">
         <p>Name: {data.name}</p>
         <p>Telephone: {data.telephone}</p>
-        <p>Method: {data.method}</p>
+        {data.method === "delivery" && (
+          <>
+            <p>Address: {data.address}</p>
+            <p>City: {data.city}</p>
+            <p>Postal Code: {data.postalCode}</p>
+          </>
+          )}
 
         <h2 className="mt-4">Cart:</h2>
         <div className="grid grid-cols-4 gap-6">

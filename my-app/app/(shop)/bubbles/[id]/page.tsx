@@ -17,18 +17,21 @@ export default async function BubbleDetails({ params }: PageProps) {
 
   return (
     <div className="p-10">
-      <h1 className="text-3xl pb-6">{bubble.name}</h1>
+      <h1 className="text-3xl pb-6 justify-self-center">{bubble.name}</h1>
       <Image
         src={bubble.image}
         alt={bubble.name}
         width={300}
         height={300}
         priority
+        className="justify-self-center"
       />
-      <p>{bubble.description}</p>
-      <p>${bubble.price}</p>
+      <p className="justify-self-center max-w-md text-center">{bubble.description}</p>
+      <p className="justify-self-center py-4">${bubble.price}</p>
       {/* add to cart functionality */}
-      <AddToCartButton bubble={bubble} />
+      <div className="justify-self-center">
+        <AddToCartButton bubble={bubble} />
+      </div>
     </div>
   );
 }

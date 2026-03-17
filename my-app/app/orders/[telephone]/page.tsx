@@ -40,7 +40,6 @@ export default async function OrdersByTelephone({ params }: PageProps) {
                 </li>
               ))}
             </ul>
-
             <p className="mt-2 font-bold">Total: ${total}</p>
           </div>
         )

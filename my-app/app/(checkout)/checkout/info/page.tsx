@@ -63,7 +63,10 @@ export default function InfoPage() {
 
             {error && <p className="text-red-500">{error}</p>}
 
-            <button onClick={handleSubmit} className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded mt-4 transition-colors">
+            <button onClick={handleSubmit}
+                    disabled={!form.name || !form.telephone || (data.method === "delivery" && (!form.address || !form.city || !form.postalCode))}
+                    className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded mt-4 transition-colors
+                              disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none">
               submit
             </button>
         </div>

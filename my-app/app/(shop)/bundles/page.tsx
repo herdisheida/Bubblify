@@ -16,10 +16,14 @@ export default async function BundlesPage({}) {
     <div className="p-10">
       <h1 className="text-3xl mb-6">Bundles</h1>
       {/* List of bundles */}
-      <div>
-        {bundles.map((bundle) => {
-          return <BundleCard key={bundle.id} bundle={bundle} bubbles={bubbles} />;
-        })}
+      <div className="grid grid-cols-3 gap-6">
+        {bundles.map((bundle) => (
+          <BundleCard
+            key={bundle.id}
+            bundle={bundle}
+            bubbles={bubbles}
+          />
+        ))}
       </div>
     </div>
   );

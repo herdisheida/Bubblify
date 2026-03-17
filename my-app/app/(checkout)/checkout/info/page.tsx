@@ -1,6 +1,5 @@
 'use client'
 
-import { DeliveryMethod } from "@/types/orders";
 import { useCheckout } from "@/context/CheckoutContext"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
@@ -53,7 +52,7 @@ export default function InfoPage() {
             <input name="telephone" placeholder="Telephone" onChange={handleChange} className="border p-2 mb-4 w-full" />
 
 {/* TODO fix - delivery not showing */}
-            {data.method === "delivery" as DeliveryMethod ? (
+            {data.method === "delivery" ? (
                 <>
                   <input name="address"    placeholder="Address"     onChange={handleChange} className="border p-2 mb-4 w-full" />
                   <input name="city"       placeholder="City"        onChange={handleChange} className="border p-2 mb-4 w-full" />

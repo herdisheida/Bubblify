@@ -14,7 +14,7 @@ export default function OrderSearch() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="my-6">
+    <form onSubmit={handleSubmit} className="mb-6">
       <input
         value={telephone}
         onChange={(e) => setTelephone(e.target.value)}

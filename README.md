@@ -3,11 +3,6 @@
 **Bubblify** is a small school project built with **Next.js**.
 It is a simple <xxxxx> application that uses the <xxxxx> to <xxxxx>.
 
-## Features
-
--
--
--
 
 ## How to Run
 

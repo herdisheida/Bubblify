@@ -15,15 +15,15 @@ export default async function OrdersByTelephone({ params }: PageProps) {
   if (!orders || orders.length === 0) {
     return (
       <div className="p-10">
-        <h1>No orders found for this telephone number</h1>
+        <h1 className="text-3xl mb-6">Find Your Orders</h1>
+        <p>No orders found for this telephone number</p>
       </div>
     )
   }
 
   return (
   <div className="p-10">
-    {/* TODO fix */}
-      {/* <h1 className="text-3xl mb-6">Orders for {telephone}</h1> */}
+    <h1 className="text-3xl mb-6">Orders for {telephone}</h1>
 
       {orders.map((order, index) => {
         const total = order.items.reduce((sum, item) => sum + item.bubble.price * item.quantity, 0)

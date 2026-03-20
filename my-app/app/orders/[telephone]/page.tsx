@@ -52,10 +52,10 @@ export default async function OrdersByTelephone({ params }: PageProps) {
         return (
           <div
             key={index}
-            className="border p-4 mb-6 rounded-xl       flex flex-col md:flex-row justify-between items-start gap-4 shadow-sm"
+            className="border p-8 mb-6 rounded-xl       flex flex-col md:flex-row justify-between items-start gap-4 shadow-sm"
           >
             <div>
-              <h2 className="font-bold">{order.customer.name}</h2>
+              <h2 className="font-bold text-xl">{order.customer.name}</h2>
 
               <div className="my-4">
                 {/* show delivery info if available */}

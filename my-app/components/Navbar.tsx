@@ -16,6 +16,9 @@ export default function Navbar() {
             <div className="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
                 <li className="hover:text-violet-700 font-bold hover:underline">
+                    <Link href="/orders">Orders</Link>
+                </li>
+                <li className="hover:text-violet-700 font-bold hover:underline">
                     <Link href="/bubbles">Products</Link>
                 </li>
                 <li className="hover:text-violet-700 font-bold hover:underline">

@@ -35,7 +35,7 @@ export default async function OrdersByTelephone({ params }: PageProps) {
 
   return (
   <div className="p-10">
-    <h1 className="text-3xl pb-6">Orders for telephone: {telephone}</h1>
+    <h1 className="text-3xl pb-6">Previous Orders for telephone: {telephone}</h1>
 
       {orders.map((order, index) => {
         const total = order.items.reduce((sum, item) => sum + item.bubble.price * item.quantity, 0)
@@ -43,8 +43,17 @@ export default async function OrdersByTelephone({ params }: PageProps) {
         return (
           <div key={index} className="border p-4 mb-6 rounded-xl       flex flex-col md:flex-row justify-between items-start gap-4 shadow-sm">
             <div>
-              <h2>{order.customer.name}</h2>
+              <h2 className="font-bold">{order.customer.name}</h2>
 
+              <div className="my-4">
+              {/* show delivery info if available */}
+              {order.customer.address && <p>Address: {order.customer.address}</p>}
+              {order.customer.city && <p>City: {order.customer.city}</p>}
+              {order.customer.postalCode && <p>Postal Code: {order.customer.postalCode}</p>}
+              </div>
+
+
+              <p>Items:</p>
               <ul className="list-disc pl-5 my-2">
                 {/* order items */}
                 {order.items.map((item) => (

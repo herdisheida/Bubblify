@@ -1,57 +1,72 @@
 // order details - app/orders/[telephone]/page.tsx
 
-import { getOrdersByTelephone } from "@/lib/api/orders"
+import { getOrdersByTelephone } from "@/lib/api/orders";
 
-import AddOrderToCartButton from "@/components/AddOrderToCartButton"
-import Link from "next/link"
+import AddOrderToCartButton from "@/components/AddOrderToCartButton";
+import Link from "next/link";
 
 /**
  * Interface defining the props for the OrdersByTelephone component
  */
 interface PageProps {
   params: Promise<{
-    telephone: string // telephone number extracted from the URL parameters - used to fetch associated orders
-  }>
+    telephone: string; // telephone number extracted from the URL parameters - used to fetch associated orders
+  }>;
 }
 
 export default async function OrdersByTelephone({ params }: PageProps) {
-  const { telephone } = await params
-  const orders = await getOrdersByTelephone(telephone)
+  const { telephone } = await params;
+  const orders = await getOrdersByTelephone(telephone);
 
   if (!orders || orders.length === 0) {
     return (
       <div className="p-10">
         <h1 className="text-3xl pb-6">Find Your Orders</h1>
-        <p className="pb-6">There is no order associated with this telephone number: {telephone}</p>
-        <Link href="/orders"
+        <p className="pb-6">
+          There is no order associated with this telephone number: {telephone}
+        </p>
+        <Link
+          href="/orders"
           className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded-xl mt-4 transition-colors
                       cursor-pointer hover:scale-101 hover:shadow-md
-                      active:outline-2 active:outline-offset-2 active:outline-violet-500 active:opacity-80">
+                      active:outline-2 active:outline-offset-2 active:outline-violet-500 active:opacity-80"
+        >
           back
         </Link>
       </div>
-    )
+    );
   }
 
   return (
-  <div className="p-10">
-    <h1 className="text-3xl pb-6">Previous Orders for telephone: {telephone}</h1>
+    <div className="p-10">
+      <h1 className="text-3xl pb-6">
+        Previous Orders for telephone: {telephone}
+      </h1>
 
       {orders.map((order, index) => {
-        const total = order.items.reduce((sum, item) => sum + item.bubble.price * item.quantity, 0)
+        const total = order.items.reduce(
+          (sum, item) => sum + item.bubble.price * item.quantity,
+          0,
+        );
 
         return (
-          <div key={index} className="border p-4 mb-6 rounded-xl       flex flex-col md:flex-row justify-between items-start gap-4 shadow-sm">
+          <div
+            key={index}
+            className="border p-4 mb-6 rounded-xl       flex flex-col md:flex-row justify-between items-start gap-4 shadow-sm"
+          >
             <div>
               <h2 className="font-bold">{order.customer.name}</h2>
 
               <div className="my-4">
-              {/* show delivery info if available */}
-              {order.customer.address && <p>Address: {order.customer.address}</p>}
-              {order.customer.city && <p>City: {order.customer.city}</p>}
-              {order.customer.postalCode && <p>Postal Code: {order.customer.postalCode}</p>}
+                {/* show delivery info if available */}
+                {order.customer.address && (
+                  <p>Address: {order.customer.address}</p>
+                )}
+                {order.customer.city && <p>City: {order.customer.city}</p>}
+                {order.customer.postalCode && (
+                  <p>Postal Code: {order.customer.postalCode}</p>
+                )}
               </div>
-
 
               <p>Items:</p>
               <ul className="list-disc pl-5 my-2">
@@ -69,16 +84,18 @@ export default async function OrdersByTelephone({ params }: PageProps) {
               <AddOrderToCartButton items={order.items} />
             </div>
           </div>
-        )
+        );
       })}
 
       {/* back to searching orders button */}
-        <Link href="/orders"
-          className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded-xl mt-4 transition-colors
+      <Link
+        href="/orders"
+        className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded-xl mt-4 transition-colors
                     cursor-pointer hover:scale-101 hover:shadow-md
-                    focus:outline-2 focus:outline-offset-2 focus:outline-blue-500 active:opacity-80">
-          back
-        </Link>
+                    focus:outline-2 focus:outline-offset-2 focus:outline-blue-500 active:opacity-80"
+      >
+        back
+      </Link>
     </div>
-  )
+  );
 }

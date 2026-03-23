@@ -1,7 +1,7 @@
 # Bubblify
 
 **Bubblify** is a small school project built with **Next.js**.
-It is a simple <xxxxx> application that uses the <xxxxx> to <xxxxx>.
+It is a simple shopping application that allows user to browse products, add them to the cart and go thorugh a checkout process.
 
 
 ## How to Run

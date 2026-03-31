@@ -30,22 +30,31 @@ export default function ReviewPage() {
     }
   }
 
+  const total = cart.reduce(
+    (sum, item) => sum + item.bubble.price * item.quantity,
+    0
+  )
+
   return (
     <div className="p-10">
       <h1 className="text-3xl pb-6">Review Order</h1>
 
       <div className="mt-6">
+        <h2 className="font-bold">Shipping Information</h2>
         <p>Name: {data.name}</p>
         <p>Telephone: {data.telephone}</p>
+
+        {data.method === "pickup" && ( <h2 className="font-bold pt-4">Store Pickup</h2> )}
         {data.method === "delivery" && (
           <>
+            <h2 className="font-bold pt-4">Home Delivery</h2>
             <p>Address: {data.address}</p>
             <p>City: {data.city}</p>
             <p>Postal Code: {data.postalCode}</p>
           </>
           )}
 
-        <h2 className="py-4">Cart:</h2>
+        <h2 className="py-4 font-bold">Cart:</h2>
         <div className="grid grid-cols-4 gap-6">
         {cart.map((item) => (
             <div key={item.bubble.id} className="border p-4 rounded-xl content-center">
@@ -58,6 +67,8 @@ export default function ReviewPage() {
         </div>
       </div>
       
+      <h2 className="text-xl pt-4 pb-6">Total: $<span className="underline">{total.toFixed(2)}</span></h2>
+
       <button onClick={handleConfirm}
               disabled={isSubmitting}
               className="bg-sky-500 hover:bg-sky-700 text-white px-6 py-3 rounded-xl mt-4 transition-colors
